@@ -14,7 +14,10 @@ app.set('view engine', 'ejs');
 let db_handler;
 const DB_URL = 'mongodb://localhost:27017';
 const DB_NAME = "myths";
-const COLLECTION = "fact_table";
+const facts_collections = "facts";
+const users_collections = "users";
+const admin_collections ="admin"
+
 
 app.listen(PORT, () => {
     console.log("server is started");
@@ -39,10 +42,33 @@ app.get('/',function(req,res){
     });
 })
 
+app.get("/profile/:username",(req,res)=>{
+    const parameters = req.params;
+    const username = parameters.username
+    console.log(parameters)
+    res.render("profile",{
+        name:username,
+        
+    });
+    
 
-app.get('/view_all',function(req,res){
+
+    
+});
+
+app.get('/view_category',function(req,res){
+   let quote  = "Here are all the videos!"
+
+    let videos
+    
+
     res.render('content',{
-
+        quote:quote,
+        politics:subjects['politics'],
+        economics:subjects['economics'],
+        health:subjects['health'],
+        music:subjects['music'],
+        history:subjects['history']
     });
 })
 
@@ -54,9 +80,32 @@ app.get('/add_myth',function(req,res){
 
 
 app.post("/addNewMyth",function(req,res){
-    console.log(req.body)
-    res.redirect("/")
+    let information = req.body;
+    let title = information.Myth_Title;
+    let description = information.Myth_Description;
+    let valid = information.validity;
+    let sources = information.source;
+ console.log(req.body) //when the user submits
+    const newMyth = {
+        title:title,
+        description:description,
+        valid:valid,
+        sources:sources
+    }
+    db_handler.collection(facts_collections).insertOne(newMyth,(err)=>{
+            if(!err){
+                console.log("SuccessFullly added")
+                res.redirect("/")
+            }
+            else{
+                console.log("error"+err)
+            }
+           
+        });
+
+   
+    
 })
 
-
+app.get()
 
