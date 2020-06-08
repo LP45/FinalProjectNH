@@ -2,6 +2,7 @@
     width: 98vw;
     
 }
+
 body{
     background-color:gray;
     width: 98vw;
@@ -77,6 +78,8 @@ a {
 }
 
 /* <!--*********************************************8 nav ends here******************* --> */
+
+
 
 .aboutcontainer {
     display: flex;

@@ -1,6 +1,12 @@
+import { Long } from "mongodb";
+
 let username = prompt("Plese enter username");
 alert("Please Enter Password. Must Be a minimum of 8 charcters long. Must have one number,letters,and at least one special character")
 let password = prompt("Plese enter a 8 character password");
+
+
+requirements: has to be 8 charcaters Long. including AT LEAST 1 special charcactcer, 1number 1 letter
+
 
 if(Number(password) < 8){
     alert("Please enter atleast 8 chacters")

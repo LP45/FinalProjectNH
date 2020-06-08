@@ -7,7 +7,8 @@ router.get('/',function(req,res){
 
 
 router.get('/view_all',function(req,res){
-
+    //retrieve all myths form database
+    //you want to send the data(or result array) to the ejs page
     res.render('adminViewall')
 });
 
@@ -46,5 +47,10 @@ router.post("/addNewMyth",function(req,res){
    
     
 });
+
+router.get('/',function(req,res){
+    res.render('adminHome')
+});
+
 
 module.exports = router

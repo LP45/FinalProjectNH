@@ -3,12 +3,14 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const bodyparser = require('body-parser');
+const path = require('path')
 const PORT = 8080;
 
 const app = express();
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 app.set('view engine', 'ejs');
 

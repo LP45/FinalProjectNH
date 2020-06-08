@@ -1,3 +1,11 @@
-<h1>Already a User, Sign In</h1>
-    <h3>Username:</h3>
-    <h3>Password:</h3>
+<h1>Please Login in to continue</h1>
+
+<form action="/verifylogin" method="POST">
+    <label for="username"><h3>Username:</h3></label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="password"><h3>Password:</h3></label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" id="submit" name="submit">Submit</input>
+</form>
+
