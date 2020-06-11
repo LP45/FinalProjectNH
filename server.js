@@ -3,29 +3,28 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const bodyparser = require('body-parser');
-const path = require('path')
+const path = require('path');
 const PORT = 8080;
 
 const app = express();
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
+app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'ejs');
 
+
+const frontEnd = require('./routes/frontEnd');
+const backEnd = require('./routes/backEnd');
+
+app.use('/',frontEnd);
+app.use('/admin',backEnd);
+
+const DB = require('./db');
+const DB_URL = DB.DB_URL
+const DB_NAME = DB.DB_NAME
 let db_handler;
-const DB_URL = 'mongodb://localhost:27017';
-const DB_NAME = "myths";
-const facts_collections = "facts";
-const users_collections = "users";
-const admin_collections ="admin"
-
-const frontEnd = require('./routes/frontEnd')
-const backEnd = require('./routes/backEnd')
-app.use('/',frontEnd)
-app.use('/admin',backEnd)
-
 app.listen(PORT, () => {
     console.log("server is started");
 

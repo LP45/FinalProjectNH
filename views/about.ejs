@@ -1,69 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style rel="stylesheets" href="./styles.css" type="text/css"></style>
-    <title>Facts OR Myth</title>
-</head>
-<body>
+<%- include('partials/head')%>
     <div class="container">
-        
-        <div class="navigation"> 
-            
-                <img src="./true_or_false.png" width="25px" height="25px"></img>
-            
-
-            <div class="menu">
-                <a href="about.html">About</a>
-                <a href="content.html">Catergory</a>
-                <a href="Meet_The_Team.html">Meet the Team</a>
-                <a href="login.html">Login</a>
-                <a href="SignIn.html">Sign In</a>
-            </div>
-
-            <div class="icon">      
-                <a href="#"><i class="fab symbol fa-instagram"></i></a>
-                <a href="#"><i class="fab symbol fa-facebook-square"></i></a>
-            </div>
-              
-        </div>
-    </div>   
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheets" href="styles.css" type="text/css">
-        <title>Document</title>
-    </head>
-    <body>
-      <div class="container">
-            
-        <div class="navigation"> 
-            
-                <img src="./true_or_false.png" width="25px" height="25px"></img>
-            
-    
-            <div class="menu">
-                <a href="about.html">About</a>
-                <a href="content.html">Catergory</a>
-                <a href="Meet_The_Team.html">Meet the Team</a>
-                <a href="apply.html">Apply</a>
-                <a href="SignIn.html">Login</a>
-            </div>
-    
-            <div class="icon">      
-                <a href="#"><i class="fab symbol fa-instagram"></i></a>
-                <a href="#"><i class="fab symbol fa-facebook-square"></i></a>
-            </div>
-              
-        </div>
-    </div>   
-      
+      <%- include('partials/navigation') %>
+    </div>       
       
         <label for="subjects"><h1>Categories:</h1></label>
         <select id="subjects">

@@ -1,18 +1,15 @@
 const express = require('express')
 const router = express.Router();
 
-router.get('/',function(req,res){
-
+router.get('/',(req, res) => {
     res.render('indexfrontend')
-
 });
 
-router.get('/view_category',function(req,res){
-    let quote  = "Here are all the videos by category!"
-    let subjects=""
-     
- 
-     res.render('content',{
+router.get('/view_category', (req, res) => {
+    let quote  = "Here are all the videos by category!";
+    let subjects="";
+    
+     res.render('content', {
          quote:quote,
          politics:subjects['politics'],
          economics:subjects['economics'],
@@ -22,30 +19,28 @@ router.get('/view_category',function(req,res){
      });
  });
 
-router.get('/team',function(req,res){
-
+router.get('/team',(req, res) => {
     res.render('meet_the_team')
 });
 
-router.get('/signup',function(req,res){
-
+router.get('/signup',(req, res) => {
     res.render('signup')
 });
 
-router.get('/about', function(req,res){
+router.get('/about', (req, res) => {
     res.render('about')
 });
 
-router.get('/login', function(req,res){
+router.get('/login', (req, res) => {
     res.render('login')
 });
 
-router.get('/profile', function(req,res){
+router.get('/profile', (req, res) => {
     res.render('profile')
 });
 
 
-router.post('/verifylogin', function(req,res){
+router.post('/verifylogin', (req, res) => {
     //get the username and password from the form. 
     //make sure the username and password match th database. USer has enetered the right info
     //if password and username(validation) is sucesssfull res.render

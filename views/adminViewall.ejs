@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-
+<%- include('partials/head') %>
+  
 
     <h1>View ALl Myth PAGE!</h1>
 <div class="container">
@@ -19,14 +11,34 @@
 
     </div>
 
-    <div class="second">
-    <div><a>Ut ac risus purus. Cras sed diam condimentum, pellentesque</a></div>
-    <div><a>Ut ac risus purus. Cras sed diam condimentum, pellentesque</a></div>
-    <div><a>Ut ac risus purus. Cras sed diam condimentum, pellentesque</a></div>
-    <div>01/25/09</div>
-    </div>
-</div>
-    <#= %>
+   
+    <h1>All Fair Food Orders</h1>
+    <br>
+    <a href="/">Back home</a>
+    <br>
+    <table class="table thead-light table-striped table-hover">
+        <thead class=thead-light>
+            <tr>
+                <th>Video Name:</th>
+                <th>Professor:</th>
+                <th>Date:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% result.forEach( (single_video) => { %>
+            <tr>
+                <td><%= single_video.title %> </td>
+
+                <td class=""><%= single_video.author %> </td>
+
+                <td class=""><%= single_video.date %></td>
+            </tr>
+            <% }); %>
+            
+        </tbody>
+    </table>
+
     
     
     <#= Create the view to show all myths in the admin. SortBY....
